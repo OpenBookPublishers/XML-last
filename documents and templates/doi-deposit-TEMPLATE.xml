@@ -1,0 +1,635 @@
+<!-- This is an example of a valid metdata deposit following http://www.crossref.org/schema/4.3.5 
+during conversion it works as source for book and (optionally) chapter metadata -->
+<?xml version="1.0" encoding="UTF-8"?>
+<doi_batch version="4.3.5" xmlns="http://www.crossref.org/schema/4.3.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.crossref.org/schema/4.3.5 http://www.crossref.org/schemas/crossref4.3.5.xsd" xmlns:ai="http://www.crossref.org/AccessIndicators.xsd">
+	<head>
+		<doi_batch_id>Ovid-Amores-Book1-050516</doi_batch_id>
+		<timestamp>201709121220</timestamp>
+		<depositor>
+			<depositor_name>Open Book Publishers</depositor_name> 
+			<email_address>bianca@openbookpublishers.com</email_address>
+		</depositor>
+		<registrant>Open Book Publishers</registrant> 
+	</head>
+	<body>
+		<book book_type='edited_book'>
+			<book_metadata>
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>  
+				<titles>   
+					<title>Ovid, Amores (Book 1)</title>
+				</titles> 
+				<publication_date> 
+					<month>05</month>
+					<year>2016</year> 
+				</publication_date> 
+				<isbn>978-1-78374-162-5</isbn>
+				<isbn>978-1-78374-163-2</isbn>
+				<isbn>978-1-78374-164-9</isbn>
+				<isbn>978-1-78374-165-6</isbn>
+				<isbn>978-1-78374-166-3</isbn> 
+				<publisher>   
+					<publisher_name>Open Book Publishers</publisher_name> 
+				</publisher>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067</doi>   
+					<resource>http://www.openbookpublishers.com/product/348</resource>   
+				</doi_data>
+			</book_metadata> 
+<!-- ============== --> 
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>1. The Life of Ovid</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>1</first_page>  
+					<last_page>2</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.01</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>2. The Amores</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>3</first_page>  
+					<last_page>6</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.02</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== --> 
+				<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>Bart</given_name>   
+						<surname>Huelsenbeck</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>3. The Manuscript Tradition of Ovid’s Amores</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>7</first_page>  
+					<last_page>10</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.03</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== --> 
+				<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>5. Scansion</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>13</first_page>  
+					<last_page>18</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.04</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== --> 
+				<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>6. Epigram: preface from the author</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>19</first_page>  
+					<last_page>20</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.05</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== --> 
+				<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>7. Amores 1.1: Ovid finds his muse</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>21</first_page>  
+					<last_page>30</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.06</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== --> 
+				<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>8. Amores 1.2: Conquered by Cupid</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>31</first_page>  
+					<last_page>42</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.07</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== --> 
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>9. Amores 1.3: Just give me a chance</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>43</first_page>  
+					<last_page>48</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.08</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>10. Amores 1.4: Secret signs</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>49</first_page>  
+					<last_page>62</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.09</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== --> 				<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>11. Amores 1.5: The siesta</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>63</first_page>  
+					<last_page>70</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.10</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== --> 				<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>12. Amores 1.6: On the doorstep</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>71</first_page>  
+					<last_page>84</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.11</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+	<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>13. Amores 1.7: Violence and love</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>85</first_page>  
+					<last_page>98</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.12</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+			<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>14. Amores 1.8: The bad influence</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>99</first_page>  
+					<last_page>120</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.13</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+			<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>15. Amores 1.9: Love and war</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>121</first_page>  
+					<last_page>130</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.14</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+			<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>16. Amores 1.10: Love for sale</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>131</first_page>  
+					<last_page>144</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.15</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+			<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>17. Amores 1.11: Sending a message</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>145</first_page>  
+					<last_page>152</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.16</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+			<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>18. Amores 1.12: Shooting messengers</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>153</first_page>  
+					<last_page>158</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.17</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+			<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>19. Amores 1.13: Oh how I hate to get up in the morning</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>159</first_page>  
+					<last_page>170</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.18</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+			<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>20. Amores 1.14: Bad hair</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>171</first_page>  
+					<last_page>182</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.19</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+			<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>21. Amores 1.15: Poetic immortality</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>183</first_page>  
+					<last_page>192</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.20</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+			<!-- ============== -->
+			<content_item component_type='chapter'>  
+				<contributors>   
+					<person_name sequence='first' contributor_role='author'>  
+						<given_name>William</given_name>   
+						<surname>Turpin</surname>  
+					</person_name>
+				</contributors>
+				<titles>    
+					<title>Full vocabulary for Ovid’s Amores, Book 1</title>
+				</titles> 
+				<publication_date>
+					<month>05</month>
+					<year>2016</year>
+				</publication_date>
+				<pages>   
+					<first_page>193</first_page>  
+					<last_page>252</last_page>
+				</pages>
+				<ai:program name="AccessIndicators">
+					<ai:free_to_read/>
+					<ai:license_ref>http://creativecommons.org/licenses/by/4.0</ai:license_ref>
+				</ai:program>
+				<doi_data>  
+					<doi>10.11647/OBP.0067.21</doi>  
+					<resource>http://www.openbookpublishers.com/product/348</resource> 
+				</doi_data>
+			</content_item>
+		</book>
+	</body>
+</doi_batch>
