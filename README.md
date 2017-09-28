@@ -78,6 +78,7 @@ line-number | Line numbers in poems
 ### Paragraph Styles
 
 PARAGRAPH STYLE | TYPE OF TEXT BLOCK
+--------------- | ------------------
 running-title | Running headers in master pages
 FM-half-title | Half-title
 FM-title | Title page: book main title
