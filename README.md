@@ -34,6 +34,10 @@ This repository contains a set of tools to convert an epub created with Adobe In
 	* delete empty list items
 	* delete empty `<div>`s
 	* delete tabs
+6. If you wish to extract citation data from the book and create a file for submission to CrossRef's cited-by service you can run 'Extract-citations-from-book.xsl'. The program will:
+	* individuate every element that has been tagged as a bibliographic entry within 'entire-book.xml' 
+	* extract and number them sequentially
+	* convert them to a `<citation>` or `<unstructured_citation>` element
 
 ## Further reading
 Visit the repo's [wiki](https://github.com/OpenBookPublishers/XML-last/wiki) to read about:
@@ -41,3 +45,4 @@ Visit the repo's [wiki](https://github.com/OpenBookPublishers/XML-last/wiki) to 
 * Book- and chapter-level metadata
 * Object-level metadata
 * The simplePrint schema and TEIPublisher
+* Extracting citation data for submission to CrossRef's cited-by service
