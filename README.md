@@ -44,8 +44,8 @@ This repository contains a set of tools to convert an epub created with Adobe In
 Visit the repo's [wiki](https://github.com/OpenBookPublishers/XML-last/wiki) to read about:
 * [Preparing the epub for conversion](https://github.com/OpenBookPublishers/XML-last/wiki/Preparing-the-epub-for-conversion)
 * [A quick description of content conversion](https://github.com/OpenBookPublishers/XML-last/wiki/A-quick-description-of-content-conversion)
-* Book- and chapter-level metadata
-* Object-level metadata
+* [Book- and chapter metadata](https://github.com/OpenBookPublishers/XML-last/wiki/Book-and-chapter-metadata)
+* [Object metadata](https://github.com/OpenBookPublishers/XML-last/wiki/Object-metadata)
 * The simplePrint schema and TEIPublisher
 * Extracting citation data for submission to CrossRef's cited-by service
 

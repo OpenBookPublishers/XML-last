@@ -7,7 +7,7 @@
     <xsl:strip-space elements="*"/>
     <!-- Create a XML output file for each XHTML input file and set its overall structure -->
     <xsl:template match="/">
-        <xsl:result-document href="entire-book.xml" method="xml">
+        <xsl:result-document href="XML-edition/entire-book.xml" method="xml">
             <teiCorpus>
                 <teiHeader>
                     <fileDesc>
@@ -42,8 +42,7 @@
                         </edition>
                     </editionStmt>-->
                         <publicationStmt>
-                            <publisher>Open Book Publishers</publisher>
-                            <pubPlace>Cambridge, UK</pubPlace>
+                            <publisher><xsl:apply-templates select="doc('doi-deposit.xml')/descendant::doi:book_metadata/doi:publisher/doi:publisher_name"/></publisher>
                             <date>
                                 <xsl:value-of
                                     select="doc('doi-deposit.xml')/descendant::doi:book_metadata/doi:publication_date/doi:year"/>
@@ -84,7 +83,7 @@
                         <idno type="ISSNOnline"> ISSN Digital </idno>
                     </seriesStmt>-->
                         <sourceDesc>
-                            <p>This is original content, published in Open Access. It is also available to read for free online at <ref target="https://www.openbookpublishers.com">https://www.openbookpublishers.com</ref></p>
+                            <p>This is original content, published in Open Access.</p>
                         </sourceDesc>
                     </fileDesc>
                 </teiHeader>

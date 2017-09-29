@@ -74,8 +74,7 @@
                                         <xsl:text> of the printed edition.</xsl:text>
                                     </extent>
                                     <publicationStmt>
-                                        <publisher>Open Book Publishers</publisher>
-                                        <pubPlace>Cambridge, UK</pubPlace>
+                                        <publisher><xsl:apply-templates select="doc('doi-deposit.xml')/descendant::doi:book_metadata/doi:publisher/doi:publisher_name"/></publisher>
                                         <date>
                                             <xsl:value-of
                                                 select="doc('doi-deposit.xml')/descendant::doi:book_metadata/doi:publication_date/doi:year"/>
@@ -166,8 +165,7 @@
                                         </respStmt>
                                     </titleStmt>
                                     <publicationStmt>
-                                        <publisher>Open Book Publishers</publisher>
-                                        <pubPlace>Cambridge, UK</pubPlace>
+                                        <publisher><xsl:apply-templates select="doc('doi-deposit.xml')/descendant::doi:book_metadata/doi:publisher/doi:publisher_name"/></publisher>
                                         <date>
                                             <xsl:value-of
                                                 select="doc('doi-deposit.xml')/descendant::doi:book_metadata/doi:publication_date/doi:year"/>
@@ -193,10 +191,7 @@
                                 </xsl:otherwise>
                             </xsl:choose>
                             <sourceDesc>
-                                <p>This is original content, published in Open Access. It is also
-                                    available to read for free online at <ref
-                                        target="https://www.openbookpublishers.com"
-                                        >https://www.openbookpublishers.com</ref></p>
+                                <p>This is original content, published in Open Access.</p>
                             </sourceDesc>
                         </fileDesc>
                         <xsl:if test="descendant::html:p[starts-with(@class, 'abstract')]">
