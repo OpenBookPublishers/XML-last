@@ -43,4 +43,4 @@ Visit the repo's [wiki](https://github.com/OpenBookPublishers/XML-last/wiki) to 
 * [Object metadata](https://github.com/OpenBookPublishers/XML-last/wiki/Object-metadata)
 * [The TEI simplePrint schema](https://github.com/OpenBookPublishers/XML-last/wiki/TEI-simplePrint)
 
-If you wish to extract bibliographic citations after conversion, visit https://github.com/OpenBookPublishers/Extract-citations
+If you wish to extract bibliographic citations from your content after conversion, visit https://github.com/OpenBookPublishers/Extract-citations
