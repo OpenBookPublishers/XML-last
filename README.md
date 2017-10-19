@@ -25,7 +25,7 @@ This repository contains a set of tools to convert an epub created with Adobe In
 	* transfer images, audio and video files (if any) from the epub to the 'XML-edition' folder
 3. Run 'Transform-to-XML-section.xsl'  to transform each input XHTML file into a XML TEI file. The output files will be saved to the 'XML-edition' folder. To run this transformation (XSLT 2.0) a processor such as SaxonHE will be needed (https://sourceforge.net/projects/saxon/files/Saxon-HE/9.8/ -- note that the open source edition of Saxon does not allow the validation of the result documents). Saxon can be run (1) from within a product that provides a graphical user interface (such as oXygen, https://www.oxygenxml.com/), (2) from the command line or (3) from within a Java or .NET application.
 	* (1) select 'Transform-to-XML-section.xsl' as both the input and the XSL source of the transformation; the output field can be left blank
-	* (2) type java `-jar _dir_/saxon9he.jar -s:_dir_/XML-last/Transform-to-XML-section.xsl -xsl:_dir_/XML-last/Transform-to-XML-section.xsl -o:_dir_/XML-last/Transform-to-XML-section.xsl`
+	* (2) type `java -jar _dir_/saxon9he.jar -s:_dir_/XML-last/Transform-to-XML-section.xsl -xsl:_dir_/XML-last/Transform-to-XML-section.xsl -o:_dir_/XML-last/Transform-to-XML-section.xsl`
 	* (3) see eg http://www.oracle.com/technetwork/java/gazfm-138953.html
 4. Run 'Transform-to-XML-book.xsl'. This second transformation uses Xinclude to merge the newly created XML TEI files into one single file. The output is saved to the 'XML-edition' folder as 'entire-book.xml'. (See above for more on how to run the transformation).
 5. Run 'XML-after-transformation.py' to:
