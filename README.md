@@ -5,7 +5,6 @@ This repository contains a set of tools to convert an epub created with Adobe In
 ## Files and directories in this repository
 * __documents and templates__: this folder contains an InDesign template. It also includes sample input files for book-, chapter- and object-level metadata
 * __schemas__: this folder contains the tei_simplePrint schema (also available at http://www.tei-c.org/Guidelines/Customization/index.xml) and the OBP customisation
-* __Extract-citations-from-book.xsl__: this script extracts citations from a book already converted to XML TEI and creates a file for submission to CrossRef's cited-by service
 * __LICENSE__
 * __README.md__: this file
 * __Transform-to-XML-book.xsl__: this script creates a unique book-long XML TEI file by combining the documents already converted
@@ -35,10 +34,6 @@ This repository contains a set of tools to convert an epub created with Adobe In
 	* delete empty list items
 	* delete empty `<div>`s
 	* delete tabs
-6. If you wish to extract citation data from the book and create a file for submission to CrossRef's cited-by service you can run 'Extract-citations-from-book.xsl'. See [Extracting citation data](https://github.com/OpenBookPublishers/XML-last/wiki/Extracting-citation-data) The program will:
-	* individuate every element that has been tagged as a bibliographic entry within 'entire-book.xml' 
-	* extract and number them sequentially
-	* convert each of them to a `<citation>` or `<unstructured_citation>` element
 
 ## Further reading
 Visit the repo's [wiki](https://github.com/OpenBookPublishers/XML-last/wiki) to read about:
@@ -46,5 +41,4 @@ Visit the repo's [wiki](https://github.com/OpenBookPublishers/XML-last/wiki) to 
 * [A quick description of content conversion](https://github.com/OpenBookPublishers/XML-last/wiki/A-quick-description-of-content-conversion)
 * [Book and chapter metadata](https://github.com/OpenBookPublishers/XML-last/wiki/Book-and-chapter-metadata)
 * [Object metadata](https://github.com/OpenBookPublishers/XML-last/wiki/Object-metadata)
-* [Extracting citation data for submission to CrossRef's cited-by service](https://github.com/OpenBookPublishers/XML-last/wiki/Extracting-citation-data)
 * [The TEI simplePrint schema](https://github.com/OpenBookPublishers/XML-last/wiki/TEI-simplePrint)
