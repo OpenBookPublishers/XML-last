@@ -199,7 +199,7 @@
                                 <abstract>
                                     <p>
                                         <xsl:copy/>
-                                        <xsl:apply-templates
+                                        <xsl:value-of
                                             select="descendant::html:p[starts-with(@class, 'abstract')]"
                                         />
                                     </p>
