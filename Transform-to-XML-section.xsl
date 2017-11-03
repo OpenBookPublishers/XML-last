@@ -294,7 +294,7 @@
     </xsl:template>
 
     <xsl:template
-        match="//html:*[not(starts-with(@class, 'heading1') or starts-with(@class, 'heading2') or starts-with(@class, 'heading3') or starts-with(@class, 'heading4') or starts-with(@class, 'heading5') or (starts-with(@class, '_idGenObject')))]"
+        match="//html:*[not(starts-with(@class, 'heading1') or starts-with(@class, 'heading2') or starts-with(@class, 'heading3') or starts-with(@class, 'heading4') or starts-with(@class, 'heading5'))]" 
         mode="group">
         <xsl:apply-templates select="current-group()"/>
     </xsl:template>
@@ -544,7 +544,7 @@
             </xsl:if>
             <!-- Extract metadata from csv if not OBP logo, CC logo or QR code -->
             <xsl:if
-                test="not(contains(@src, 'logo') or contains(@src, 'QR') or contains(@src, 'CC-'))">
+                test="not(contains(@src, 'logo') or contains(@src, 'QR') or contains(@src, 'CC-') or contains(@src, 'Sound'))">
                 <xsl:if test="unparsed-text-available('Object-metadata.csv', 'iso-8859-1')">
                     <xsl:variable name="in"
                         select="unparsed-text('Object-metadata.csv', 'iso-8859-1')"/>
