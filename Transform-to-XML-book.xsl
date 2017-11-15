@@ -99,6 +99,12 @@
                 <xi:include href="XML-edition/contents.xml">
                     <xi:fallback/>
                 </xi:include>
+                <xi:include href="XML-edition/acknowledgements.xml">
+                    <xi:fallback/>
+                </xi:include>
+                <xi:include href="XML-edition/acknowledgments.xml">
+                    <xi:fallback/>
+                </xi:include>
                 <xi:include href="XML-edition/contributors.xml">
                     <xi:fallback/>
                 </xi:include>
@@ -109,9 +115,6 @@
                     <xi:fallback/>
                 </xi:include>
                 <xi:include href="XML-edition/music.xml">
-                    <xi:fallback/>
-                </xi:include>
-                <xi:include href="XML-edition/acknowledgements.xml">
                     <xi:fallback/>
                 </xi:include>
                 <xi:include href="XML-edition/foreword.xml">
