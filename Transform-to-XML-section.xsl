@@ -513,10 +513,28 @@
         </bibl>
     </xsl:template>
 
-    <xsl:template match="//html:p[starts-with(@class, 'index')]">
-        <p>
+    <xsl:template match="//html:p[starts-with(@class, 'index-lev1')]">
+        <label type="index-level1">
             <xsl:apply-templates/>
-        </p>
+        </label>
+    </xsl:template>
+    
+    <xsl:template match="//html:p[starts-with(@class, 'index-lev2')]">
+        <label type="index-level2">
+            <xsl:apply-templates/>
+        </label>
+    </xsl:template>
+    
+    <xsl:template match="//html:p[starts-with(@class, 'index-lev3')]">
+        <label type="index-level3">
+            <xsl:apply-templates/>
+        </label>
+    </xsl:template>
+    
+    <xsl:template match="//html:p[starts-with(@class, 'index-lev4')]">
+        <label type="index-level4">
+            <xsl:apply-templates/>
+        </label>
     </xsl:template>
 
     <xsl:template match="//html:p[starts-with(@class, 'break')]">
