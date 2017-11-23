@@ -108,15 +108,6 @@
                 <xi:include href="XML-edition/contributors.xml">
                     <xi:fallback/>
                 </xi:include>
-                <xi:include href="XML-edition/illustrations.xml">
-                    <xi:fallback/>
-                </xi:include>
-                <xi:include href="XML-edition/tables.xml">
-                    <xi:fallback/>
-                </xi:include>
-                <xi:include href="XML-edition/music.xml">
-                    <xi:fallback/>
-                </xi:include>
                 <xi:include href="XML-edition/foreword.xml">
                     <xi:fallback/>
                 </xi:include>
@@ -204,10 +195,19 @@
                 <xi:include href="XML-edition/bibliography.xml">
                     <xi:fallback/>
                 </xi:include>
-                <xi:include href="XML-edition/index.xml">
+                <xi:include href="XML-edition/illustrations.xml">
+                    <xi:fallback/>
+                </xi:include>
+                <xi:include href="XML-edition/tables.xml">
+                    <xi:fallback/>
+                </xi:include>
+                <xi:include href="XML-edition/music.xml">
                     <xi:fallback/>
                 </xi:include>
                 <xi:include href="XML-edition/chronology.xml">
+                    <xi:fallback/>
+                </xi:include>
+                <xi:include href="XML-edition/index.xml">
                     <xi:fallback/>
                 </xi:include>
             </teiCorpus>
