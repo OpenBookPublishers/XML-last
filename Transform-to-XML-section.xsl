@@ -393,6 +393,28 @@
             </bibl>-->
         </quote>
     </xsl:template>
+    
+    <xsl:template match="//html:p[starts-with(@class, 'quote-in-footnote-first')]">
+        <quote>
+            <xsl:apply-templates/>
+            <!--<bibl>
+                <availability>
+                    <licence>Quotations fall under fair dealing and are not licenced under the terms stated above.</licence>
+                </availability>
+            </bibl>-->
+        </quote>
+    </xsl:template>
+    
+    <xsl:template match="//html:p[starts-with(@class, 'quote-in-footnote-other')]">
+        <quote type="cont">
+            <xsl:apply-templates/>
+            <!--<bibl>
+                <availability>
+                    <licence>Quotations fall under fair dealing and are not licenced under the terms stated above.</licence>
+                </availability>
+            </bibl>-->
+        </quote>
+    </xsl:template>
 
     <xsl:template match="//html:p[starts-with(@class, 'highlighted')]">
         <ab type="highlighted">
