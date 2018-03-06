@@ -421,6 +421,14 @@
             <xsl:apply-templates/>
         </ab>
     </xsl:template>
+    
+    <xsl:template match="//html:p[starts-with(@class, 'code')]">
+        <p>
+            <code>
+                <xsl:apply-templates/>
+            </code>
+        </p>
+    </xsl:template>
 
     <xsl:template match="//html:p[starts-with(@class, 'abstract')]">
         <desc>
@@ -1047,9 +1055,22 @@
                         </xsl:when>
                         <!-- Subscript -->
                         <xsl:when test="starts-with(@class, 'subscript')">
-                            <hi rendition="simple:subscript">
-                                <xsl:apply-templates/>
-                            </hi>
+                            <xsl:choose>
+                                 <!-- Subscript italic-->
+                                 <xsl:when test="contains(@class, 'italic')">
+                                     <hi rendition="simple:italic">
+                                         <hi rendition="simple:subscript">
+                                             <xsl:apply-templates/>
+                                         </hi>
+                                     </hi>
+                                 </xsl:when>
+                                 <!-- Superscript -->
+                                 <xsl:otherwise>
+                                     <hi rendition="simple:subscript">
+                                         <xsl:apply-templates/>
+                                     </hi>
+                                 </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:when>
                         <!-- Smaller -->
                         <xsl:when test="starts-with(@class, 'smaller')">

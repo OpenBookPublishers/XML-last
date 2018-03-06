@@ -192,6 +192,9 @@
                 <xi:include href="XML-edition/ch25.xml">
                     <xi:fallback/>
                 </xi:include>
+                <xi:include href="XML-edition/endnotes.xml">
+                    <xi:fallback/>
+                </xi:include>
                 <xi:include href="XML-edition/bibliography.xml">
                     <xi:fallback/>
                 </xi:include>
