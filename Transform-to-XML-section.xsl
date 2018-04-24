@@ -657,10 +657,10 @@
             <!-- Include audio file if present -->
             <xsl:if test="contains(@src, 'Sound')">
                 <xsl:if
-                    test="ancestor::html:div/preceding-sibling::html:*[1]/descendant::html:audio">
+                    test="ancestor::html:div/ancestor::html:div/descendant::html:audio">
                     <xsl:variable name="audiopath">
                         <xsl:value-of
-                            select="ancestor::html:div/preceding-sibling::html:*[1]/descendant::html:audio/html:source/@src"
+                            select="ancestor::html:div/ancestor::html:div/descendant::html:audio/html:source/@src"
                         />
                     </xsl:variable>
                     <xsl:variable name="audiofilename">
@@ -669,88 +669,7 @@
                     <xsl:element name="media">
                         <xsl:attribute name="mimeType">
                             <xsl:value-of
-                                select="ancestor::html:div/preceding-sibling::html:*[1]/descendant::html:audio/html:source/@type"
-                            />
-                        </xsl:attribute>
-                        <xsl:attribute name="url">
-                            <xsl:value-of select="$audiopath"/>
-                        </xsl:attribute>
-                    </xsl:element>
-                    <xsl:if test="unparsed-text-available('Object-metadata.csv', 'iso-8859-1')">
-                        <xsl:variable name="in"
-                            select="unparsed-text('Object-metadata.csv', 'iso-8859-1')"/>
-                        <xsl:analyze-string select="$in" regex="\n">
-                            <xsl:non-matching-substring>
-                                <xsl:if test="contains(., $audiofilename)">
-                                    <bibl>
-                                        <xsl:analyze-string select="."
-                                            regex='"(.+?)","(.+?)","(.+?)","(.+?)","(.+?)","(.+?)","(.+?)","(.+?)"'>
-                                            <xsl:matching-substring>
-                                                <title>
-                                                  <xsl:value-of select="regex-group(2)"/>
-                                                </title>
-                                                <author>
-                                                  <xsl:value-of select="regex-group(3)"/>
-                                                </author>
-                                                <date>
-                                                  <xsl:value-of select="regex-group(4)"/>
-                                                </date>
-                                                <respStmt>
-                                                  <name>
-                                                  <xsl:value-of select="regex-group(5)"/>
-                                                  </name>
-                                                  <resp>
-                                                  <xsl:value-of select="regex-group(6)"/>
-                                                  </resp>
-                                                </respStmt>
-                                                <availability>
-                                                  <licence>
-                                                  <xsl:value-of select="regex-group(7)"/>
-                                                  </licence>
-                                                  <p>Every effort has been made to identify and
-                                                  contact copyright holders and any omission or
-                                                  error will be corrected if notification is made to
-                                                  the publisher. If you think we got this wrong, or
-                                                  you wish to know more, please visit <ref
-                                                  target="https://www.openbookpublishers.com/section/85/1/image-copyright"
-                                                  >https://www.openbookpublishers.com/section/85/1/image-copyright</ref></p>
-                                                </availability>
-                                                <xsl:if test="regex-group(8) != 'None'">
-                                                  <xsl:choose>
-                                                  <xsl:when test="contains(regex-group(8), 'doi')">
-                                                  <idno type="DOI">
-                                                  <xsl:value-of select="regex-group(8)"/>
-                                                  </idno>
-                                                  </xsl:when>
-                                                  <xsl:otherwise>
-                                                  <ref target="{regex-group(8)}">
-                                                  <xsl:value-of select="regex-group(8)"/>
-                                                  </ref>
-                                                  </xsl:otherwise>
-                                                  </xsl:choose>
-                                                </xsl:if>
-                                            </xsl:matching-substring>
-                                        </xsl:analyze-string>
-                                    </bibl>
-                                </xsl:if>
-                            </xsl:non-matching-substring>
-                        </xsl:analyze-string>
-                    </xsl:if>
-                </xsl:if>
-                <xsl:if
-                    test="ancestor::html:div/following-sibling::html:*[1]/descendant::html:audio">
-                    <xsl:variable name="audiopath">
-                        <xsl:value-of
-                            select="ancestor::html:div/following-sibling::html:*[1]/descendant::html:audio/html:source/@src"
-                        />
-                    </xsl:variable>
-                    <xsl:variable name="audiofilename">
-                        <xsl:value-of select="substring($audiopath, 7)"/>
-                    </xsl:variable>
-                    <xsl:element name="media">
-                        <xsl:attribute name="mimeType">
-                            <xsl:value-of
-                                select="ancestor::html:div/following-sibling::html:*[1]/descendant::html:audio/html:source/@type"
+                                select="ancestor::html:div/ancestor::html:div/descendant::html:audio/html:source/@type"
                             />
                         </xsl:attribute>
                         <xsl:attribute name="url">
@@ -820,10 +739,10 @@
                 </xsl:if>
             </xsl:if>
             <!-- Include video file if present -->
-            <xsl:if test="ancestor::html:div/following-sibling::html:*[1]/descendant::html:video">
+            <xsl:if test="ancestor::html:div/ancestor::html:div/descendant::html:video">
                 <xsl:variable name="videopath">
                     <xsl:value-of
-                        select="ancestor::html:div/following-sibling::html:*[1]/descendant::html:video/html:source/@src"
+                        select="ancestor::html:div/ancestor::html:div/descendant::html:video/html:source/@src"
                     />
                 </xsl:variable>
                 <xsl:variable name="videofilename">
@@ -832,7 +751,7 @@
                 <xsl:element name="media">
                     <xsl:attribute name="mimeType">
                         <xsl:value-of
-                            select="ancestor::html:div/following-sibling::html:*[1]/descendant::html:video/html:source/@type"
+                            select="ancestor::html:div/ancestor::html:div/descendant::html:video/html:source/@type"
                         />
                     </xsl:attribute>
                     <xsl:attribute name="url">
