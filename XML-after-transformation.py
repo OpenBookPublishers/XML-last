@@ -4,7 +4,8 @@ import shutil
 import re
 import xml.etree.ElementTree as ET
 
-XMLfolder=os.path.dirname(os.path.abspath(__file__))+'\XML-edition'
+XMLfolder=os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       'XML-edition')
 ET.register_namespace('', 'http://www.tei-c.org/ns/1.0')
 
 filelist=os.listdir(XMLfolder)
