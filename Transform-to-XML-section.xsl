@@ -10,7 +10,9 @@
    
     <xsl:template match="/">
         <xsl:for-each select="collection('input/?select=*.xhtml')">
-            <xsl:variable name="outfile" select="descendant::html:title"/>
+          <!--<xsl:variable name="outfile" select="descendant::html:title"/>-->
+	  <xsl:variable name="outfile"
+			select="(tokenize(base-uri(.), '\.|/'))[last() - 1]" />
             <xsl:variable name="chapter-doi-number"
                 select="substring(descendant::html:p[starts-with(@class, 'doi')]/html:a, 26)"/>
             <xsl:result-document href="XML-edition/{$outfile}.xml" method="xml">
