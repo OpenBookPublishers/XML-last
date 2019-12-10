@@ -25,7 +25,7 @@ for file in foldercontent:
         depositext=os.path.splitext(file)[1]
         newdepositname='doi-deposit'+depositext
         os.rename(deposit, newdepositname)
-        
+
 #choose a destination for the files extracted from the zipped folder
 intermediatefolder=folder+'/'+epubname+'-original-epub-files'
 
