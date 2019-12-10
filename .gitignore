@@ -1,0 +1,6 @@
+*.xml
+*.epub
+*.zip
+XML-edition/
+input/
+*original-epub-files/

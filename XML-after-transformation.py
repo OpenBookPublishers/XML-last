@@ -20,7 +20,7 @@ for f in filelist:
       for ref in reflist:
         dest=ref.get('target')
         if re.search('.xml', dest)!=None:
-          newdest=re.sub(r'(.+?\.xml)',r'entire-book.xml', dest)
+          newdest=re.sub(r'(.+?\.xml)', r'entire-book.xml', dest)
         else:
           newdest=dest
         ref.set('target', newdest)
@@ -29,7 +29,7 @@ for f in filelist:
       for tei in teilist:
         base=tei.get('{http://www.w3.org/XML/1998/namespace}base')
         if re.search(r'XML-edition\/', base)!=None:
-          newbase=re.sub(r'XML-edition\/',r'', base)
+          newbase=re.sub(r'XML-edition\/', r'', base)
         else:
           newbase=base
         tei.set('{http://www.w3.org/XML/1998/namespace}base', newbase)
@@ -51,7 +51,7 @@ for f in filelist:
       fnote = note.text
       if fnote != None:
         if re.search('\t', fnote)!=None:
-          nfnote = fnote.replace('\t','')
+          nfnote = fnote.replace('\t', '')
           note.text = nfnote
           
     tree.write(file)
