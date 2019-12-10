@@ -9,18 +9,18 @@ folder=os.path.dirname(os.path.abspath(__file__))
 foldercontent=os.listdir(folder)
 for file in foldercontent:
     #finds and renames the epub file
-    if re.search('epub', file)!=None:
+    if file.lower().endswith('.epub'):
         epub=file
         epubname=os.path.splitext(epub)[0]
         newepubname=epubname+'.zip'
         os.rename(epub, newepubname)
     #if already renamed, locates the zip folder
-    elif re.search('zip', file)!=None:
+    elif file.lower().endswith('.zip'):
         zipfolder=file
         epubname=os.path.splitext(zipfolder)[0]
         newepubname=zipfolder
     #finds and renames the doi deposit file
-    elif re.search('xml', file)!=None:
+    elif file.lower().endswith('.xml'):
         deposit=file
         depositext=os.path.splitext(file)[1]
         newdepositname='doi-deposit'+depositext
