@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build . -t openbookpublishers/obp-epub-fixup:test -f Dockerfile.test
+docker build . -t openbookpublishers/xml-last:test -f Dockerfile.test

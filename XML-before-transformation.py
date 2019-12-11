@@ -1,77 +1,91 @@
 import os
 import os.path
-import zipfile
 import shutil
-import re
+from zipfile import ZipFile
 
-#read all files in the transformation folder
-folder=os.path.dirname(os.path.abspath(__file__))
-foldercontent=os.listdir(folder)
-for file in foldercontent:
-    #finds and renames the epub file
+
+DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_DIR = DIR+'/input'
+IMG_DIR = DIR+'/input/image'
+XML_DIR = DIR+'/XML-edition/image'
+AUDIO_DIR = DIR+'/input/audio'
+XML_AUDIO_DIR = DIR+'/XML-edition/audio'
+VIDEO_DIR = DIR+'/input/video'
+XML_VIDEO_DIR = DIR+'/XML-edition/video'
+IGNORE_XHTML = shutil.ignore_patterns('*.xhtml')
+IGNORE_SECONDARY = shutil.ignore_patterns('*.opf', 'back*', '*cover*',
+                                          'half*', 'toc*', 'css', 'font')
+
+# read all files in the transformation directory
+for file in os.listdir(DIR):
+    # finds and renames the epub file
     if file.lower().endswith('.epub'):
-        epub=file
-        epubname=os.path.splitext(epub)[0]
-        newepubname=epubname+'.zip'
+        epub = file
+        epubname = os.path.splitext(epub)[0]
+        newepubname = epubname+'.zip'
         os.rename(epub, newepubname)
-    #if already renamed, locates the zip folder
+    # if already renamed, locates the zip file
     elif file.lower().endswith('.zip'):
-        zipfolder=file
-        epubname=os.path.splitext(zipfolder)[0]
-        newepubname=zipfolder
-    #finds and renames the doi deposit file
+        zipfile = file
+        epubname = os.path.splitext(zipfile)[0]
+        newepubname = zipfile
+    # finds and renames the doi deposit file
     elif file.lower().endswith('.xml'):
-        deposit=file
-        depositext=os.path.splitext(file)[1]
-        newdepositname='doi-deposit'+depositext
+        deposit = file
+        depositext = os.path.splitext(file)[1]
+        newdepositname = 'doi-deposit' + depositext
         os.rename(deposit, newdepositname)
 
-#choose a destination for the files extracted from the zipped folder
-intermediatefolder=folder+'/'+epubname+'-original-epub-files'
+# choose a destination for the files extracted from the zip file
+TMP_DIR = DIR+'/'+epubname+'-original-epub-files'
+OEBPS_DIR = TMP_DIR+'/OEBPS'
 
-#extract content from zipped folder
-from zipfile import ZipFile
-def extract(zipFilename, dm_extraction_dir) :
-   zipTest = ZipFile(zipFilename)
-   zipTest.extractall(dm_extraction_dir)
-extract(newepubname, intermediatefolder)
 
-#copy files selectively from OEBPS to the transformation input folder
-from shutil import copytree, ignore_patterns
-oebpsfolder=intermediatefolder+'/OEBPS'
-inputfolder=folder+'/input'
-if os.path.exists(inputfolder)==False:
-    shutil.copytree(oebpsfolder, inputfolder, symlinks=False, ignore=ignore_patterns('*.opf', 'back*', '*cover*', 'half*', 'toc*', 'css', 'font'))
+def extract(zip_filename, dm_extraction_dir):
+    """
+    Extract content from zip file
+    """
+    zip_test = ZipFile(zip_filename)
+    zip_test.extractall(dm_extraction_dir)
+
+
+extract(newepubname, TMP_DIR)
+
+# copy files selectively from OEBPS to the transformation input directory
+if not os.path.exists(INPUT_DIR):
+    shutil.copytree(OEBPS_DIR, INPUT_DIR, symlinks=False,
+                    ignore=IGNORE_SECONDARY)
 else:
-    shutil.rmtree(inputfolder)
-    shutil.copytree(oebpsfolder, inputfolder, symlinks=False, ignore=ignore_patterns('*.opf', 'back*', '*cover*', 'half*', 'toc*', 'css', 'font'))
+    shutil.rmtree(INPUT_DIR)
+    shutil.copytree(OEBPS_DIR, INPUT_DIR, symlinks=False,
+                    ignore=IGNORE_SECONDARY)
 
-#copy images from input folder to XML folder
-imagefolder=folder+'/input/image'
-XMLfolder=folder+'/XML-edition/image'
-if os.path.exists(XMLfolder)==False:
-    shutil.copytree(imagefolder, XMLfolder, symlinks=False, ignore=ignore_patterns('*.xhtml'))
+# copy images from input directory to XML directory
+if not os.path.exists(XML_DIR):
+    shutil.copytree(IMG_DIR, XML_DIR, symlinks=False,
+                    ignore=IGNORE_XHTML)
 else:
-    shutil.rmtree(XMLfolder)
-    shutil.copytree(imagefolder, XMLfolder, symlinks=False, ignore=ignore_patterns('*.xhtml'))
+    shutil.rmtree(XML_DIR)
+    shutil.copytree(IMG_DIR, XML_DIR, symlinks=False,
+                    ignore=IGNORE_XHTML)
 
-#copy audio from input folder to XML folder
-audiofolder=folder+'/input/audio'
-XMLaudiofolder=folder+'/XML-edition/audio'
-if os.path.exists(audiofolder)==True:
-    if os.path.exists(XMLaudiofolder)==False:
-        shutil.copytree(audiofolder, XMLaudiofolder, symlinks=False, ignore=ignore_patterns('*.xhtml'))
+# copy audio from input to XML directory
+if os.path.exists(AUDIO_DIR):
+    if not os.path.exists(XML_AUDIO_DIR):
+        shutil.copytree(AUDIO_DIR, XML_AUDIO_DIR, symlinks=False,
+                        ignore=IGNORE_XHTML)
     else:
-        shutil.rmtree(XMLaudiofolder)
-        shutil.copytree(audiofolder, XMLaudiofolder, symlinks=False, ignore=ignore_patterns('*.xhtml'))
+        shutil.rmtree(XML_AUDIO_DIR)
+        shutil.copytree(AUDIO_DIR, XML_AUDIO_DIR, symlinks=False,
+                        ignore=IGNORE_XHTML)
 
 
-#copy videos from input folder to XML folder
-videofolder=folder+'/input/video'
-XMLvideofolder=folder+'/XML-edition/video'
-if os.path.exists(videofolder)==True:
-    if os.path.exists(XMLvideofolder)==False:
-        shutil.copytree(videofolder, XMLvideofolder, symlinks=False, ignore=ignore_patterns('*.xhtml'))
+# copy videos from input to XML directory
+if os.path.exists(VIDEO_DIR):
+    if not os.path.exists(XML_VIDEO_DIR):
+        shutil.copytree(VIDEO_DIR, XML_VIDEO_DIR, symlinks=False,
+                        ignore=IGNORE_XHTML)
     else:
-        shutil.rmtree(XMLvideofolder)
-        shutil.copytree(videofolder, XMLvideofolder, symlinks=False, ignore=ignore_patterns('*.xhtml'))
+        shutil.rmtree(XML_VIDEO_DIR)
+        shutil.copytree(VIDEO_DIR, XML_VIDEO_DIR, symlinks=False,
+                        ignore=IGNORE_XHTML)
