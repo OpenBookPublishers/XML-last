@@ -1,8 +1,7 @@
 import os
 import os.path
-import zipfile
 import shutil
-import re
+from zipfile import ZipFile
 
 #read all files in the transformation folder
 folder=os.path.dirname(os.path.abspath(__file__))
@@ -30,7 +29,6 @@ for file in foldercontent:
 intermediatefolder=folder+'/'+epubname+'-original-epub-files'
 
 #extract content from zipped folder
-from zipfile import ZipFile
 def extract(zipFilename, dm_extraction_dir) :
    zipTest = ZipFile(zipFilename)
    zipTest.extractall(dm_extraction_dir)
