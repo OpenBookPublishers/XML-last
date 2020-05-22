@@ -977,6 +977,52 @@
         </xsl:for-each>
     </xsl:template>
     
+    <!-- bold html tag -->
+    <xsl:template match="//html:b">
+        <xsl:for-each select=".">
+            <xsl:choose>
+                <!-- Some more anchors -->
+                <xsl:when test="@id and not(node())">
+                    <anchor xml:id="{@id}">
+                        <xsl:apply-templates/>
+                    </anchor>
+                </xsl:when>
+                <!-- Actual b -->
+                <xsl:when test="node()">
+                    <hi rendition="simple:bold">
+                        <xsl:apply-templates/>
+                    </hi>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text> </xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- strong html tag -->
+    <xsl:template match="//html:strong">
+        <xsl:for-each select=".">
+            <xsl:choose>
+                <!-- Some more anchors -->
+                <xsl:when test="@id and not(node())">
+                    <anchor xml:id="{@id}">
+                        <xsl:apply-templates/>
+                    </anchor>
+                </xsl:when>
+                <!-- Actual strong -->
+                <xsl:when test="node()">
+                    <hi rendition="simple:bold">
+                        <xsl:apply-templates/>
+                    </hi>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text> </xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    
     <xsl:template match="//html:span">
         <xsl:for-each select=".">
             <xsl:choose>
