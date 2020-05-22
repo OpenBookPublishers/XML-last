@@ -1086,6 +1086,29 @@
         </xsl:for-each>
     </xsl:template>
     
+    <!-- small html tag -->
+    <xsl:template match="//html:small">
+        <xsl:for-each select=".">
+            <xsl:choose>
+                <!-- Some more anchors -->
+                <xsl:when test="@id and not(node())">
+                    <anchor xml:id="{@id}">
+                        <xsl:apply-templates/>
+                    </anchor>
+                </xsl:when>
+                <!-- Actual small -->
+                <xsl:when test="node()">
+                    <hi rendition="simple:smaller">
+                        <xsl:apply-templates/>
+                    </hi>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text> </xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    
     <xsl:template match="//html:span">
         <xsl:for-each select=".">
             <xsl:choose>
