@@ -907,6 +907,76 @@
     </xsl:template>
 
     <!-- CHARACTER STYLES -->
+    
+    <!-- Italic html tag -->
+    <xsl:template match="//html:i">
+        <xsl:for-each select=".">
+            <xsl:choose>
+                <!-- Some more anchors -->
+                <xsl:when test="@id and not(node())">
+                    <anchor xml:id="{@id}">
+                        <xsl:apply-templates/>
+                    </anchor>
+                </xsl:when>
+                <!-- Actual i -->
+                <xsl:when test="node()">
+                    <hi rendition="simple:italic">
+                        <xsl:apply-templates/>
+                    </hi>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text> </xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- cite html tag -->
+    <xsl:template match="//html:em">
+        <xsl:for-each select=".">
+            <xsl:choose>
+                <!-- Some more anchors -->
+                <xsl:when test="@id and not(node())">
+                    <anchor xml:id="{@id}">
+                        <xsl:apply-templates/>
+                    </anchor>
+                </xsl:when>
+                <!-- Actual em -->
+                <xsl:when test="node()">
+                    <hi rendition="simple:italic">
+                        <xsl:apply-templates/>
+                    </hi>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text> </xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- emphasis html tag -->
+    <xsl:template match="//html:cite">
+        <xsl:for-each select=".">
+            <xsl:choose>
+                <!-- Some more anchors -->
+                <xsl:when test="@id and not(node())">
+                    <anchor xml:id="{@id}">
+                        <xsl:apply-templates/>
+                    </anchor>
+                </xsl:when>
+                <!-- Actual cite -->
+                <xsl:when test="node()">
+                    <hi rendition="simple:italic">
+                        <xsl:apply-templates/>
+                    </hi>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text> </xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    
     <xsl:template match="//html:span">
         <xsl:for-each select=".">
             <xsl:choose>
