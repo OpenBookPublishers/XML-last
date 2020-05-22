@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
     xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:doi="http://www.crossref.org/schema/4.4.1"
+    xmlns:doi="http://www.crossref.org/schema/4.3.5"
     xmlns:ai="http://www.crossref.org/AccessIndicators.xsd">
     <xsl:output method="xml" indent="yes"/>
     <xsl:strip-space elements="*"/>
@@ -211,7 +211,8 @@
                     </teiHeader>
                     <text xml:id="{$outfile}">
                         <body>
-                            <xsl:apply-templates select="//html:body/html:div"/>
+                            <!-- <xsl:apply-templates select="//html:body/html:div"/> -->
+                            <xsl:apply-templates select="//html:body/html:section"/>
                         </body>
                     </text>
                 </TEI>
@@ -222,7 +223,8 @@
     <xsl:template match="//html:div[@class = '_idFootnotes']"/>
 
     <!-- Set the hierarchy of <div>s inside each document using 'for-each-group' -->
-    <xsl:template match="//html:body/html:div">
+    <!-- <xsl:template match="//html:body/html:div"> -->
+    <xsl:template match="//html:body/html:section">
         <div>
             <xsl:for-each-group select="html:*"
                 group-starting-with="html:*[starts-with(@class, 'heading1')]">
