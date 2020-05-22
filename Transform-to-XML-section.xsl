@@ -1023,6 +1023,69 @@
         </xsl:for-each>
     </xsl:template>
     
+    <!-- superscript html tag -->
+    <xsl:template match="//html:sup">
+        <xsl:for-each select=".">
+            <xsl:choose>
+                <!-- Some more anchors -->
+                <xsl:when test="@id and not(node())">
+                    <anchor xml:id="{@id}">
+                        <xsl:apply-templates/>
+                    </anchor>
+                </xsl:when>
+                <!-- Actual sup -->
+                <xsl:when test="node()">
+                    <xsl:choose>
+                        <!-- Find footnotes and move them inside the text at the right point of insertion -->
+                        <xsl:when
+                            test="descendant::html:a[starts-with(@class, '_idFootnoteLink')]">
+                            <xsl:variable name="footnote-n">
+                                <xsl:value-of select="descendant::html:a"/>
+                            </xsl:variable>
+                            <xsl:element name="note">
+                                <xsl:attribute name="n">
+                                    <xsl:value-of select="$footnote-n"/>
+                                </xsl:attribute>
+                                <xsl:apply-templates
+                                    select="ancestor::html:body/descendant::html:div[starts-with(@class, '_idFootnotes')]/html:div[number($footnote-n)]"
+                                />
+                            </xsl:element>
+                        </xsl:when>
+                        <!-- Superscript -->
+                        <xsl:otherwise>
+                            <hi rendition="simple:superscript">
+                                <xsl:apply-templates/>
+                            </hi>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- subscript html tag -->
+    <xsl:template match="//html:sub">
+        <xsl:for-each select=".">
+            <xsl:choose>
+                <!-- Some more anchors -->
+                <xsl:when test="@id and not(node())">
+                    <anchor xml:id="{@id}">
+                        <xsl:apply-templates/>
+                    </anchor>
+                </xsl:when>
+                <!-- Actual sub -->
+                <xsl:when test="node()">
+                    <hi rendition="simple:subscript">
+                        <xsl:apply-templates/>
+                    </hi>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text> </xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
+    </xsl:template>
+    
     <xsl:template match="//html:span">
         <xsl:for-each select=".">
             <xsl:choose>
