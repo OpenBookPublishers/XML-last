@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
     xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:doi="http://www.crossref.org/schema/4.3.5"
+    xmlns:doi="http://www.crossref.org/schema/4.3.6"
     xmlns:ai="http://www.crossref.org/AccessIndicators.xsd">
     <xsl:output method="xml" indent="yes"/>
     <xsl:strip-space elements="*"/>
@@ -14,7 +14,7 @@
 	  <xsl:variable name="outfile"
 			select="(tokenize(base-uri(.), '\.|/'))[last() - 1]" />
             <xsl:variable name="chapter-doi-number"
-                select="substring(descendant::html:p[starts-with(@class, 'doi')]/html:a, 26)"/>
+                select="substring(descendant::html:p[starts-with(@class, 'doi')]/html:a/@href, 26)"/>
             <xsl:result-document href="XML-edition/{$outfile}.xml" method="xml">
                 <TEI>
                     <teiHeader>
@@ -88,7 +88,7 @@
                                         <availability>
                                             <licence>
                                                 <xsl:apply-templates
-                                                  select="doc('doi-deposit.xml')/descendant::doi:content_item/descendant::doi:*[contains(text(), $chapter-doi-number)]/ancestor::doi:content_item/ai:program/ai:license_ref"
+                                                    select="doc('doi-deposit.xml')/descendant::doi:content_item/descendant::doi:*[contains(text(), $chapter-doi-number)]/ancestor::doi:content_item/ai:program/ai:license_ref"
                                                 />
                                             </licence>
                                             <p>This licence applies to the content that follows,
@@ -211,8 +211,8 @@
                     </teiHeader>
                     <text xml:id="{$outfile}">
                         <body>
-                            <!-- <xsl:apply-templates select="//html:body/html:div"/> -->
-                            <xsl:apply-templates select="//html:body/html:section"/>
+                            <xsl:apply-templates select="//html:body/html:div"/>
+                            <!-- <xsl:apply-templates select="//html:body/html:section"/> -->
                         </body>
                     </text>
                 </TEI>
@@ -223,8 +223,8 @@
     <xsl:template match="//html:div[@class = '_idFootnotes']"/>
 
     <!-- Set the hierarchy of <div>s inside each document using 'for-each-group' -->
-    <!-- <xsl:template match="//html:body/html:div"> -->
-    <xsl:template match="//html:body/html:section">
+    <xsl:template match="//html:body/html:div"> 
+    <!-- <xsl:template match="//html:body/html:section"> -->
         <div>
             <xsl:for-each-group select="html:*"
                 group-starting-with="html:*[starts-with(@class, 'heading1')]">
@@ -364,7 +364,7 @@
     </xsl:template>
 
     <xsl:template
-        match="//html:p[starts-with(@class, 'first-para') or starts-with(@class, 'other-para') or starts-with(@class, 'normal-para')]">
+        match="//html:p[starts-with(@class, 'first-para') or starts-with(@class, 'other-para') or starts-with(@class, 'normal-para') or starts-with(@class, 'paragraph')]">
         <p>
             <xsl:apply-templates/>
         </p>
@@ -455,12 +455,6 @@
         <label type="short-reference">
             <xsl:apply-templates/>
         </label>
-    </xsl:template>
-
-    <xsl:template match="//html:p[starts-with(@class, 'translation')]">
-        <p>
-            <xsl:apply-templates/>
-        </p>
     </xsl:template>
 
     <xsl:template match="//html:p[starts-with(@class, 'table-caption')]">
@@ -581,7 +575,21 @@
             <xsl:apply-templates/>
         </label>
     </xsl:template>
-
+    
+    <!--NEW-->
+    <xsl:template match="//html:p[starts-with(@class, 'lemma')]">
+        <label type="lemma">
+            <xsl:apply-templates/>
+        </label>
+    </xsl:template>
+   
+    <xsl:template match="//html:p[starts-with(@class, 'translation') or starts-with(@class, 'article-') or starts-with(@class, 'extra-info')]">
+        <p>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    <!--NEW-->
+    
     <xsl:template match="//html:p[starts-with(@class, 'break')]">
         <milestone unit="section"/>
     </xsl:template>
